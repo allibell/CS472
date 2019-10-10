@@ -68,7 +68,7 @@ class BackpropLearner(SupervisedLearner):
         self.mse_vs = []
         pass
 
-    def train_iteration(self, x, y, out_size=3, len_hidden_layer=8, learning_rate=.01, momentum=0.0):
+    def train_iteration(self, x, y, out_size=3, len_hidden_layer=85, learning_rate=.01, momentum=0.7):
         # add the bias
         x = np.append(x, 1).reshape((np.size(x, axis=0) + 1, 1))
         if self.w0 is None:

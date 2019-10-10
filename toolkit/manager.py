@@ -32,10 +32,10 @@ class MLSystemManager:
             "perceptron": PerceptronLearner(),
             "multiperceptron": MultiPerceptronLearner(),
             "backprop": BackpropLearner(),
-            "decisiontree": DecisionTreeLearner(),
-            "knn": InstanceBasedLearner(),
-            "k_means": KMeansClusterLearner(),
-            "hac": HACClusterLearner()
+            # "decisiontree": DecisionTreeLearner(),
+            # "knn": InstanceBasedLearner(),
+            # "k_means": KMeansClusterLearner(),
+            # "hac": HACClusterLearner()
         }
         if model in modelmap:
             return modelmap[model]
@@ -74,7 +74,7 @@ class MLSystemManager:
 
             print("Calculating accuracy on training set...")
 
-            features = Matrix(data, 0, 0, data.rows, data.cols)  # todo: edit here
+            features = Matrix(data, 0, 0, data.rows, data.cols - 1)
             labels = Matrix(data, 0, data.cols - 1, data.rows, 1)
             confusion = Matrix()
             start_time = time.time()
